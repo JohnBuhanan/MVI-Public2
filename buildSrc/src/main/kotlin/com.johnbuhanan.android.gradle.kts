@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 import com.android.build.gradle.BaseExtension
 
 plugins {
@@ -39,8 +41,7 @@ with(the<BaseExtension>()) {
 }
 
 dependencies {
-//    "implementation"(libs.resolveDe)
-
-//    "implementation"(libs.hiltAndroid)
-//    "implementation"(libs.resolveDependency("busybee.android"))
+//    "kapt"(libs.resolveDependency("bundles.daggerKapt"))
+//    "implementation"(libs.resolveDependency("hiltAndroid"))
+//    "implementation"(libs.resolveDependency("bundles.dagger"))
 }

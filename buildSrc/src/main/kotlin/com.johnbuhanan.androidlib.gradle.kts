@@ -24,5 +24,5 @@ with(the<BaseExtension>()) {
 }
 
 dependencies {
-//    "implementation"(libs.resolveDependency("busybee.android"))
+
 }
