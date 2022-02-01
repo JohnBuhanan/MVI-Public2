@@ -1,14 +1,20 @@
 plugins {
     `kotlin-dsl`
-    `kotlin-dsl-precompiled-script-plugins`
 }
 
 repositories {
+    gradlePluginPortal()
     mavenCentral()
     google()
 }
 
 dependencies {
-    implementation("com.android.tools.build:gradle:7.2.0-alpha07")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
+    implementation(libs.hiltAndroidGradlePlugin)
+    implementation(libs.agp)
+    implementation(libs.kotlinGradlePlugin)
+    implementation(gradleApi())
+    implementation(localGroovy())
+
+    testImplementation(libs.assertk)
+//    testImplementation(libs.junit4)
 }

@@ -1,10 +1,5 @@
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
-    kotlin("kapt")
-    // Precompiled plugin with the base android configuration.
-    // Declared in buildSrc/.../android-config.gradle.kts.
-    `android-config`
+    id("com.johnbuhanan.androidlib")
 }
 
 android {
@@ -18,6 +13,9 @@ android {
 
 // Versions are declared in gradle/libs.versions.toml
 dependencies {
+    // ===== dagger =====
+    kapt(libs.bundles.daggerKapt)
+    implementation(libs.bundles.dagger)
 
     // ===== android =====
     implementation(libs.bundles.android)
@@ -27,10 +25,6 @@ dependencies {
     // ===== compose =====
     implementation(libs.bundles.compose)
     debugImplementation(libs.composeTooling)
-
-    // ===== dagger =====
-    implementation(libs.dagger)
-    kapt(libs.daggerCompiler)
 
     // ===== tests ======
     testImplementation(libs.junit)
