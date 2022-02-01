@@ -1,7 +1,8 @@
 package com.morfly.sample.profile
 
 import androidx.navigation.NavType
-import androidx.navigation.compose.navArgument
+import androidx.navigation.navArgument
+
 import com.morfly.sample.common.AggregateFeatureEntry
 
 

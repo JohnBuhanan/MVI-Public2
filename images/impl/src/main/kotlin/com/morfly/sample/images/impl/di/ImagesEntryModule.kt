@@ -6,14 +6,16 @@ import com.morfly.sample.images.ImagesEntry
 import com.morfly.sample.images.impl.ImagesEntryImpl
 import dagger.Binds
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import dagger.multibindings.IntoMap
 import javax.inject.Singleton
 
 
 // Used by AppComponent directly
 @Module
+@InstallIn(SingletonComponent::class)
 interface ImagesEntryModule {
-
     @Binds
     @Singleton
     @IntoMap

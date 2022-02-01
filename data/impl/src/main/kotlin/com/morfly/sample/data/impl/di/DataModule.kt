@@ -8,12 +8,13 @@ import com.morfly.sample.data.impl.mapping.DataMapper
 import com.morfly.sample.data.impl.mapping.DefaultDataMapper
 import dagger.Binds
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-
-@Module(includes = [NetworkModule::class, StorageModule::class])
+@InstallIn(SingletonComponent::class)
+@Module
 interface DataModule {
-
     @Binds
     @Singleton
     fun mapper(impl: DefaultDataMapper): DataMapper

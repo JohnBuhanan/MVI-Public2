@@ -1,11 +1,11 @@
 package com.morfly.sample.common
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavDeepLink
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NamedNavArgument
 import androidx.navigation.compose.composable
 
 
@@ -34,7 +34,7 @@ interface ComposableFeatureEntry : FeatureEntry {
     fun NavGraphBuilder.Composable(
         navController: NavHostController,
         destinations: Destinations,
-        backStackEntry: NavBackStackEntry
+        backStackEntry: NavBackStackEntry,
     )
 }
 

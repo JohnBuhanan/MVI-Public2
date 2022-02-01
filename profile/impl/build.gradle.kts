@@ -1,23 +1,12 @@
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
-    kotlin("kapt")
-    // Precompiled plugin with the base android configuration.
-    // Declared in buildSrc/.../android-config.gradle.kts.
-    `android-config`
-}
-
-android {
-
-    // ===== compose =====
-    buildFeatures.compose = true
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.get()
-    }
+    id("com.johnbuhanan.androidlib")
 }
 
 // Declared in gradle/libs.versions.toml
 dependencies {
+    // ===== dagger =====
+    kapt(libs.bundles.daggerKapt)
+    implementation(libs.bundles.dagger)
 
     // Type-safe project accessors
     api(projects.profile.api)

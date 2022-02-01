@@ -2,12 +2,6 @@ plugins {
     `kotlin-dsl`
 }
 
-repositories {
-    gradlePluginPortal()
-    mavenCentral()
-    google()
-}
-
 dependencies {
     implementation(libs.hiltAndroidGradlePlugin)
     implementation(libs.agp)

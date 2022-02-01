@@ -4,7 +4,6 @@ import com.android.build.gradle.BaseExtension
 
 plugins {
     kotlin("android")
-//    `kotlin-dsl`
 }
 apply(plugin = "kotlin-kapt")
 apply(plugin = "dagger.hilt.android.plugin")
@@ -36,7 +35,7 @@ with(the<BaseExtension>()) {
     buildFeatures.compose = true
 
     composeOptions {
-//        kotlinCompilerExtensionVersion = libs.versions.compose//resolveVersion("compose").requiredVersion
+        kotlinCompilerExtensionVersion = "1.1.0-rc03"
     }
 }
 
