@@ -6,8 +6,10 @@ import com.morfly.sample.profile.impl.userprofile.GetUserImages
 import com.morfly.sample.profile.impl.userprofile.GetUserImagesUseCase
 import dagger.Binds
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
-
+@InstallIn(SingletonComponent::class)
 @Module
 interface UserProfileModule {
 

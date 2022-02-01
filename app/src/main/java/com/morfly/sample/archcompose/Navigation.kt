@@ -8,7 +8,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.morfly.sample.archcompose.di.LocalAppProvider
 import com.morfly.sample.archcompose.ui.BottomMenuBar
 import com.morfly.sample.common.find
 import com.morfly.sample.images.ImagesEntry

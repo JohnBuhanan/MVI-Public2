@@ -27,5 +27,3 @@ interface DataProvider {
 
     val usersRepository: UsersRepository
 }
-
-val LocalDataProvider = compositionLocalOf<DataProvider> { error("No data provider found!") }
