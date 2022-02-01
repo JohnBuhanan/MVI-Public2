@@ -17,21 +17,19 @@
 package com.morfly.sample.data.impl.di
 
 import android.content.Context
+import com.morfly.sample.data.impl.storage.AppDatabase
 import dagger.Module
 import dagger.Provides
-import com.morfly.sample.data.impl.storage.AppDatabase
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
 object StorageModule {
-
     @Provides
     @Singleton
-    fun provideDatabase(context: Context): AppDatabase =
+    fun provideDatabase(@ApplicationContext context: Context): AppDatabase =
         AppDatabase.getInstance(context)
 }
-
-

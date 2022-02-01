@@ -9,15 +9,15 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.morfly.sample.archcompose.ui.BottomMenuBar
+import com.morfly.sample.common.Destinations
 import com.morfly.sample.common.find
 import com.morfly.sample.images.ImagesEntry
 import com.morfly.sample.profile.ProfileEntry
 
 
 @Composable
-fun Navigation() {
+fun Navigation(destinations: Destinations) {
     val navController = rememberNavController()
-    val destinations = LocalAppProvider.current.destinations
 
     val imagesScreen = destinations.find<ImagesEntry>()
     val profileScreen = destinations.find<ProfileEntry>()

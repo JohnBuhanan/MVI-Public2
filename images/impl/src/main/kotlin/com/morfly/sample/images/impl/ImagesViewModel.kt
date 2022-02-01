@@ -3,7 +3,7 @@ package com.morfly.sample.images.impl
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
-import com.morfly.sample.common.di.FeatureScoped
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,10 +13,10 @@ import kotlinx.coroutines.flow.flatMapLatest
 import javax.inject.Inject
 
 
-@FeatureScoped
+@HiltViewModel
 class ImagesViewModel @Inject constructor(
     private val getImages: GetImages,
-    getEmptyFeed: GetEmptyFeed
+    getEmptyFeed: GetEmptyFeed,
 ) : ViewModel() {
 
     private val searchQueryFlow = MutableStateFlow<String?>(value = null)
@@ -37,7 +37,6 @@ class ImagesViewModel @Inject constructor(
 
 
     companion object {
-
         private const val QUERY_INPUT_DELAY_MILLIS = 1000L
     }
 }

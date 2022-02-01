@@ -1,22 +1,24 @@
 package com.morfly.sample.profile.impl.userprofile
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.morfly.sample.common.domain.Image
 import com.morfly.sample.common.domain.User
-import com.morfly.sample.profile.impl.userprofile.di.UserId
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
-
+@HiltViewModel
 class UserProfileViewModel @Inject constructor(
     private val getUserImages: GetUserImages,
     private val getMyImages: GetMyImages,
-    @UserId private val userId: String?,
+    savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
 
+    private val userId = savedStateHandle.get<String>("userId")
     val isMyProfile = userId == null
     val showSettingsButton = userId == null
     val screenTitle = if (isMyProfile) "My Profile" else "Profile"
@@ -44,4 +46,3 @@ class UserProfileViewModel @Inject constructor(
         mutableUsername.value = user.name
     }
 }
-
